@@ -11,7 +11,7 @@ Both simulations study four CI variants that combine two bandwidth choices (B = 
 
 | File | Description |
 |------|-------------|
-| `plr.cpp` | Rcpp source compiled by the R scripts. Exports: `generate_data_plr` (simulate from DGP models 1â€“3), `estimate_plr` (closed-form pairwise-difference estimator at a single bandwidth), and `estimate_plr_grid` (efficient multi-bandwidth version using a single O(nÂ²) pair scan). |
+| `plr.cpp` | Rcpp source compiled by the R scripts. Exports: `generate_data_plr` (simulate from DGP models 1-3), `estimate_plr` (closed-form pairwise-difference estimator at a single bandwidth), and `estimate_plr_grid` (efficient multi-bandwidth version using a single O(n²) pair scan). |
 | `function_plr_boot.R` | Helper functions sourced by `boot_plr.R`. `bootstrap_once` runs a full bootstrap for one dataset: it evaluates the estimator on the union bandwidth grid, stores quantiles for both CI variants (B = 1 and B = 3^(1/d)), and returns point estimates and bootstrap quantiles. |
 
 ### Simulation script
@@ -37,7 +37,7 @@ Both simulations study four CI variants that combine two bandwidth choices (B = 
 
 | File | Description |
 |------|-------------|
-| `logit.cpp` | Rcpp source compiled by the R scripts. Exports: `generate_data` (simulate from DGP models 1â€“3), `precompute_active_pairs` (collect kernel-weighted discordant pairs), `fast_wlogit` (Newton-Raphson weighted logistic regression, no intercept), and `gradient_fnc` / `objective_fnc` (gradient and value of the pairwise logistic objective). |
+| `logit.cpp` | Rcpp source compiled by the R scripts. Exports: `generate_data` (simulate from DGP models 1-3), `precompute_active_pairs` (collect kernel-weighted discordant pairs), `fast_wlogit` (Newton-Raphson weighted logistic regression, no intercept), and `gradient_fnc` / `objective_fnc` (gradient and value of the pairwise logistic objective). |
 | `function_logit_boot.R` | Helper functions sourced by `boot_logit.R`. `thetahat` computes all four estimators; `boot_result` assembles the bootstrap CIs. |
 | `function_logit_mse.R` | Reference `glm()`-based implementations of the L=0 (`estL0`) and jackknife-debiased (`estL1`) estimators. Used by the MSE simulation scripts. |
 
