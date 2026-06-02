@@ -1,9 +1,6 @@
-﻿# Pairwise Estimator Simulation
+﻿# Replication: Cattaneo, Jansson and Nagasawa (2026, ET)
 
-Simulation code for bootstrap confidence intervals for pairwise difference estimators
-Both simulations study four CI variants that combine two bandwidth choices (B = 1 and B = 3^(1/d)) with two bias correction levels (L = 0 no bias correction, L = 1 jackknife).
-
----
+Replication files for simulation results.
 
 ## Partially linear regression (PLR)
 
@@ -29,8 +26,6 @@ Both simulations study four CI variants that combine two bandwidth choices (B = 
 | `make_table_plr.R` | Reads the compiled RDS from `combine_plr.R` and writes a LaTeX `tabular` block (plain text) with coverage and CI-length columns for all four CI variants. |
 | `plot_coverage_plr.R` | Reads the compiled RDS from `combine_plr.R` and plots empirical coverage probability vs. bandwidth for all four CI variants. Saves a PDF. |
 
----
-
 ## Pairwise logit
 
 ### Core functions
@@ -55,3 +50,10 @@ Both simulations study four CI variants that combine two bandwidth choices (B = 
 | `mse_combine_logit.R` | Aggregator for MSE simulation output. Reports bias, SD, RMSE, and MSE per bandwidth. |
 | `make_table_logit.R` | Reads the compiled RDS from `combine_logit.R` and writes a LaTeX `tabular` block (plain text) with coverage and CI-length columns for all four CI variants. |
 | `plot_coverage_logit.R` | Reads the compiled RDS from `combine_logit.R` and plots empirical coverage probability vs. bandwidth for all four CI variants. Saves a PDF. |
+
+
+## Reference
+
+Cattaneo, Jansson and Nagasawa (2026): [Robust Inference for Convex Pairwise Difference Estimators](https://mdcattaneo.github.io/papers/Cattaneo-Jansson-Nagasawa_2026_ET.pdf).<br>
+_Econometric Theory_, forthcoming.<br>
+DOI: 
